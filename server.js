@@ -22,7 +22,9 @@ app.get('/api/notes', (req, res) => {
 })
 
 app.post('/api/notes', (req, res) => {
-    req.body;
+    newNote = req.body;
+    db.push(newNote);
+    res.json(db);
 })
 
 app.listen(PORT, () => {
