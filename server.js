@@ -30,9 +30,7 @@ app.post('/api/notes', (req, res) => {
 })
 
 app.delete('/api/notes/:id', (req, res) => {
-    // !Currently not returning the correct index always -1
-    let noteIndex = db.findIndex(id => {id === req.params.id});
-    console.log(noteIndex);
+    let noteIndex = db.findIndex(obj => obj.id === req.params.id);
 
     db.splice(noteIndex, 1);
     res.json(db);
