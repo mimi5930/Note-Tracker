@@ -25,7 +25,16 @@ app.get('/api/notes', (req, res) => {
 app.post('/api/notes', (req, res) => {
     req.body.id = nanoid();
     db.push(req.body);
-    
+
+    res.json(db);
+})
+
+app.delete('/api/notes/:id', (req, res) => {
+    const noteIndex = db.indexOf(req.params.id);
+    if(noteIndex === -1) {
+        res.status(400).json({ message: `the note with the id of ${req.params.id} could not be found`});
+    }
+    let filtered = db.filter(arr => {arr.id !== noteIndex})
     res.json(db);
 })
 
