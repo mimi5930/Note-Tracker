@@ -1,17 +1,1 @@
-[
-    {
-        "title":"Test Title",
-        "text":"Test text",
-        "id": "asdf"
-    },
-    {
-        "title":"Note 2",
-        "text":"Test text",
-        "id": "asdfg"
-    },
-    {
-        "title":"Note 3",
-        "text":"Test text",
-        "id": "asdfgh"
-    }
-]
+[]
