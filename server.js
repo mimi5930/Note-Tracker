@@ -30,11 +30,10 @@ app.post('/api/notes', (req, res) => {
 })
 
 app.delete('/api/notes/:id', (req, res) => {
-    const noteIndex = db.indexOf(req.params.id);
-    if(noteIndex === -1) {
-        res.status(400).json({ message: `the note with the id of ${req.params.id} could not be found`});
-    }
-    let filtered = db.filter(arr => {arr.id !== noteIndex})
+    let noteIndex = db.findIndex(id => {id === req.params.id});
+    console.log(noteIndex);
+
+    db.splice(noteIndex, 1);
     res.json(db);
 })
 
